@@ -17,6 +17,13 @@ describe('App', () => {
     expect(wrapper.state().favoriteFoodArray).toEqual([]);
   });
 
+  it('should update state of favoriteFoodArray when addFoodToFavorites is called', () => {
+    wrapper.instance().addFoodToFavorites('chicken nuggets');
+    wrapper.instance().addFoodToFavorites('macaroni and cheese');
+
+    expect(wrapper.state().favoriteFoodArray.length).toEqual(2);
+  });
+
 });
 
 
