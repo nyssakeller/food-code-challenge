@@ -19,8 +19,11 @@ class AddFoodForm extends Component {
     const { addFoodToFavorites } = this.props;
     const { inputValue } = this.state;
     
-    addFoodToFavorites(inputValue);
-    this.setState({ inputValue: '' });
+    if(inputValue !== '')  { 
+      addFoodToFavorites(inputValue);
+      this.setState({ inputValue: '' });
+    }
+
   }
 
   render() {
