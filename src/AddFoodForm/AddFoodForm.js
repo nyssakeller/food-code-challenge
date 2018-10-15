@@ -3,7 +3,14 @@ import React, { Component } from 'react';
 class AddFoodForm extends Component {
   constructor() {
     super();
-    this.state = {}
+    this.state = {
+      inputValue: ''
+    }
+  }
+
+  updateInputValue = e => {
+    const { value } = e.target;
+    this.setState({ inputValue: value });
   }
 
   render() {
@@ -12,7 +19,8 @@ class AddFoodForm extends Component {
         <form>
           <input type='text'
                  value={ this.state.inputValue }
-                 placeholder='Enter food here' />
+                 placeholder='Enter food here'
+                 onChange={ (e) => this.updateInputValue(e) } />
           <button>Submit</button>
         </form>
       </div>
