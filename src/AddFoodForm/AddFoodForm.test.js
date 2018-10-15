@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme';
 import AddFoodForm from './AddFoodForm';
 
 describe('AddFoodForm', () => {
+  const mockEvent = { target: { value: 'chicken nuggets' } };
 
   it('should match snapshot', () => {
     const wrapper = shallow( <AddFoodForm /> );
@@ -12,5 +13,13 @@ describe('AddFoodForm', () => {
   it('has an inital state of inputValue set to an empty string', () => {
     const wrapper = shallow( <AddFoodForm /> );
     expect(wrapper.state().inputValue).toEqual('');
+  });
+
+  it('updates the state of inputValue on input change', () => {
+    const wrapper = mount( <AddFoodForm addFoodToFavorites={ jest.fn() } /> );
+    const input = wrapper.find('input');
+
+    input.simulate('change', mockEvent);
+    expect(wrapper.state().inputValue).toEqual('chicken nuggets');
   });
 });
