@@ -8,7 +8,7 @@
 
 p {
   align-items: center;
-  border: solid red 3px;
+  border: solid rgb(196, 1, 1) 3px;
   display: flex;
   font-size: 36px;
   font-weight: 700;
