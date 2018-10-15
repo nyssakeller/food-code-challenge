@@ -3,14 +3,14 @@ import { shallow, mount } from 'enzyme';
 import AddFoodForm from './AddFoodForm';
 
 describe('AddFoodForm', () => {
-  let wrapper;
-
-  beforeEach(() => {
-    wrapper = mount( <AddFoodForm addFoodToFavorites={ jest.fn() } /> );
-  });
 
   it('should match snapshot', () => {
-    wrapper = shallow( <AddFoodForm /> );
+    const wrapper = shallow( <AddFoodForm /> );
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('has an inital state of inputValue set to an empty string', () => {
+    const wrapper = shallow( <AddFoodForm /> );
+    expect(wrapper.state().inputValue).toEqual('');
   });
 });
