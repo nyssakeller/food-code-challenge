@@ -10,8 +10,24 @@ input {
   width: 270px;
 }
 
+input:focus {
+  outline: 0;
+}
+
 button {
-  background-color: red;
+  background-color: rgb(196, 1, 1);
+  border: rgb(196, 1, 1);
+  color: white;
+  font-weight: bold;
   height: 36px;
   width: 80px;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  background-color: rgb(135, 0, 0);
+  border: rgb(135, 0, 0);
 }
