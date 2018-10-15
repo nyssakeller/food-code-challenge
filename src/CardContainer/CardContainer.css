@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Yantramanav:300,700');
+
 #card-container {
   display: flex;
   flex-wrap: wrap;
@@ -8,6 +10,8 @@ p {
   align-items: center;
   border: solid red 3px;
   display: flex;
+  font-size: 36px;
+  font-weight: 700;
   height: 170px;
   justify-content: center;
   margin: 15px;

@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Yantramanav:300');
+
 .App {
+  font-family: 'Yantramanav', sans-serif;
+  font-weight: 300;
   text-align: center;
 }
 
