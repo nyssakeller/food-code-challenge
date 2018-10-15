@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AddFoodForm from '../AddFoodForm/AddFoodForm';
+import CardContainer from '../CardContainer/CardContainer';
 import './App.css';
 
 class App extends Component {
@@ -17,12 +18,13 @@ class App extends Component {
 
   render() {
     const { favoriteFoodArray } = this.state;
-    let amountOfFood = !favoriteFoodArray.length ? 'You have no items' : `You have ${favoriteFoodArray.length} item(s)`;
+    let amountOfFood = !favoriteFoodArray.length ? 'You have no items' : '';
 
     return (
       <div className="App">
-        <AddFoodForm addFoodToFavorites={ this.addFoodToFavorites }/>
+        <AddFoodForm addFoodToFavorites={ this.addFoodToFavorites } />
         <h2>{ amountOfFood }</h2>
+        <CardContainer favoriteFoodArray={ favoriteFoodArray } />
       </div>
     );
   }
