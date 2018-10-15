@@ -10,7 +10,11 @@ describe('App', () => {
   });
 
   it('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
 
+  it('should have an initial state of favoriteFoodArray set to an empty array', () => {
+    expect(wrapper.state().favoriteFoodArray).toEqual([]);
   });
 
 });
