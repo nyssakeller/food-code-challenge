@@ -9,7 +9,12 @@ class AddFoodForm extends Component {
   render() {
     return(
       <div>
-
+        <form>
+          <input type='text'
+                 value={ this.state.inputValue }
+                 placeholder='Enter food here' />
+          <button>Submit</button>
+        </form>
       </div>
     );
   }
