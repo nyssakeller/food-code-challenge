@@ -13,10 +13,15 @@ class AddFoodForm extends Component {
     this.setState({ inputValue: value });
   }
 
+  submitFavoriteFood = e => {
+    e.preventDefault();
+    this.setState({ inputValue: '' });
+  }
+
   render() {
     return(
       <div>
-        <form>
+        <form onSubmit={ (e) => this.submitFavoriteFood(e) }>
           <input type='text'
                  value={ this.state.inputValue }
                  placeholder='Enter food here'
