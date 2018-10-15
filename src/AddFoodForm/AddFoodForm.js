@@ -15,6 +15,10 @@ class AddFoodForm extends Component {
 
   submitFavoriteFood = e => {
     e.preventDefault();
+    const { addFoodToFavorites } = this.props;
+    const { inputValue } = this.state;
+    
+    addFoodToFavorites(inputValue);
     this.setState({ inputValue: '' });
   }
 
