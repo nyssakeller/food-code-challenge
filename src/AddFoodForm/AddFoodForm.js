@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './AddFoodForm.css';
 
 class AddFoodForm extends Component {
   constructor() {
