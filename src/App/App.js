@@ -18,7 +18,7 @@ class App extends Component {
 
   render() {
     const { favoriteFoodArray } = this.state;
-    let amountOfFood = !favoriteFoodArray.length ? 'You have no items' : `You have ${favoriteFoodArray.length} item(s)`;
+    let amountOfFood = !favoriteFoodArray.length ? 'You have no items' : '';
 
     return (
       <div className="App">
