@@ -22,4 +22,13 @@ describe('AddFoodForm', () => {
     input.simulate('change', mockEvent);
     expect(wrapper.state().inputValue).toEqual('chicken nuggets');
   });
+
+  it('resets the state of inputValue to and empty string on form submit', () => {
+    const wrapper = mount( <AddFoodForm addFoodToFavorites={ jest.fn() } /> );
+    const form = wrapper.find('form');
+
+    form.simulate('submit', mockEvent);
+    expect(wrapper.state().inputValue).toEqual('');
+  });
+
 });
