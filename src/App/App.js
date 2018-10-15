@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AddFoodForm from '../AddFoodForm/AddFoodForm';
+import CardContainer from '../CardContainer/CardContainer';
 import './App.css';
 
 class App extends Component {
@@ -21,8 +22,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <AddFoodForm addFoodToFavorites={ this.addFoodToFavorites }/>
+        <AddFoodForm addFoodToFavorites={ this.addFoodToFavorites } />
         <h2>{ amountOfFood }</h2>
+        <CardContainer favoriteFoodArray={ favoriteFoodArray } />
       </div>
     );
   }
