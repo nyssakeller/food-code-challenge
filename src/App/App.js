@@ -16,9 +16,13 @@ class App extends Component {
   }
 
   render() {
+    const { favoriteFoodArray } = this.state;
+    let amountOfFood = !favoriteFoodArray.length ? 'You have no items' : `You have ${favoriteFoodArray.length} item(s)`;
+
     return (
       <div className="App">
-        <AddFoodForm addFoodToFavorite={ this.addFoodToFavorites }/>
+        <AddFoodForm addFoodToFavorites={ this.addFoodToFavorites }/>
+        <h2>{ amountOfFood }</h2>
       </div>
     );
   }
