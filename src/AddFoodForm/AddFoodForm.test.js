@@ -1,9 +1,10 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import AddFoodForm from './AddFoodForm';
+import App from '../App/App';
 
 describe('AddFoodForm', () => {
-  const mockEvent = { target: { value: 'chicken nuggets' } };
+  const mockEvent = { target: { value: 'chicken nuggets' }, preventDefault: () => {} };
 
   it('should match snapshot', () => {
     const wrapper = shallow( <AddFoodForm /> );
@@ -29,6 +30,14 @@ describe('AddFoodForm', () => {
 
     form.simulate('submit', mockEvent);
     expect(wrapper.state().inputValue).toEqual('');
+  });
+
+  it('calls this.props.addFoodToFavorites when submitFavoriteFood has been called this.state.inputValue', () => {
+    const wrapper = mount( <AddFoodForm addFoodToFavorites={ jest.fn() } /> );
+    const { inputValue } = wrapper.state();
+
+    wrapper.instance().submitFavoriteFood(mockEvent);
+    expect(wrapper.props().addFoodToFavorites).toHaveBeenCalledWith(inputValue);
   });
 
 });
