@@ -24,6 +24,9 @@ class AddFoodForm extends Component {
   }
 
   render() {
+    const { inputValue } = this.state;
+    let disable = inputValue !== '' ? false : true;
+    
     return(
       <div>
         <form onSubmit={ (e) => this.submitFavoriteFood(e) }>
@@ -31,7 +34,7 @@ class AddFoodForm extends Component {
                  value={ this.state.inputValue }
                  placeholder='Enter food here'
                  onChange={ (e) => this.updateInputValue(e) } />
-          <button>Submit</button>
+          <button disabled={ disable }>Submit</button>
         </form>
       </div>
     );
